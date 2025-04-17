@@ -1,0 +1,4 @@
+Welcome to CryptCoin! In this text-based adventure game you will traverse a deep and dangerous mine in search of different valuables called CryptCoins.
+Each coin can be sold for varying prices for you to upgrade your gear. (Use the shop to buy and sell) The deeper you go, the more valuable your coins become,
+but the dangers of the mine become more perilous as well, so be careful. You may return to the top at any time, and return to your previous spot in the mine instantly.
+You will discover different Monsters, Coins, Traps, and maybe some fun characters to help you along your journey. Good luck, and happy Mining!!
