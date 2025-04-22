@@ -1,6 +1,9 @@
 #CryptCoin-Final Project
-#David Armstrong
+#David Armstrong, Owen Haluska
 #Group 1
+import tkinter as tk
+from tkinter import messagebox
+
 class Coin:
     def __init__(self, name, price, toughness, hp):
         self.name = name
@@ -111,3 +114,34 @@ def gameStart():
 
 player = gameStart()
             
+root = tk.Tk()
+root.title("CryptCoin")
+root.geometry("400x300")
+
+def show_inventory():
+    inventory = "Coins:\n"
+    for symbol, coin in coinDictionary.items():
+        inventory += f"{symbol}: {coin}\n"
+    inventory += "\nTools:\n"
+    for name, tool in toolDictionary.items():
+        inventory += f"{tool}\n"
+    messagebox.showinfo("Inventory", inventory)
+
+def attack_enemy():
+    player.attack(enemy)
+    result = f"Attacked {enemy.name}!\nEnemy HP: {enemy.hp}"
+    messagebox.showinfo("Attack", result)
+
+def mine_coin():
+    coin = coinDictionary["DOGE"]
+    coin.hp -= mining_tool.coinDmg
+    mining_tool.durability -= 1
+    result = f"Mined {coin.name}!\nRemaining Coin HP: {coin.hp}\nTool Durability: {mining_tool.durability}"
+    messagebox.showinfo("Mine", result)
+
+
+tk.Button(root, text="Show Inventory", command=show_inventory).pack(pady=10)
+tk.Button(root, text="Attack", command=attack_enemy).pack(pady=10)
+tk.Button(root, text="Mine", command=mine_coin).pack(pady=10)
+
+root.mainloop()
